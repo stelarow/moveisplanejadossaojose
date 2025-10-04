@@ -1,7 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { ServicesTabs } from "@/components/services-tabs";
-import { GalleryOption2Split } from "@/components/gallery-option2-split";
 import { Testimonials } from "@/components/testimonials";
 import { ContactProgressive as Contact } from "@/components/contact-progressive";
 import { Footer } from "@/components/footer";
@@ -13,7 +12,6 @@ export default function Home() {
       <main>
         <Hero />
         <ServicesTabs />
-        <GalleryOption2Split />
         <Testimonials />
         <Contact />
       </main>
@@ -404,85 +402,6 @@ export default function Home() {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Trabalhamos com MDF, MDP de alta qualidade, acabamentos em BP, laminados, acrílico, vidros e espelhos. Ferragens de marcas premium como Blum e Hettich. Você escolhe cores, texturas e acabamentos no projeto personalizado."
-                }
-              }
-            ]
-          })
-        }}
-      />
-
-      {/* ImageObject Schema para Galeria */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ImageObject",
-                "position": 1,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/cozinha-ilha.jpg",
-                "name": "Cozinha Planejada com Ilha - São José SC",
-                "description": "Cozinha planejada moderna com ilha central, armários brancos e bancada em granito. Projeto completo com eletrodomésticos embutidos.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
-                }
-              },
-              {
-                "@type": "ImageObject",
-                "position": 2,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/closet-luxo.jpg",
-                "name": "Closet Planejado de Luxo - São José SC",
-                "description": "Closet planejado sob medida com iluminação em LED, gavetas com soft close e espelhos. Design elegante e funcional.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
-                }
-              },
-              {
-                "@type": "ImageObject",
-                "position": 3,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/quarto-casal.jpg",
-                "name": "Dormitório Planejado Casal - São José SC",
-                "description": "Quarto de casal completo com guarda-roupa planejado, cabeceira e criados-mudos integrados. Acabamento premium.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
-                }
-              },
-              {
-                "@type": "ImageObject",
-                "position": 4,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/sala-estar.jpg",
-                "name": "Sala de Estar Planejada - São José SC",
-                "description": "Sala de estar moderna com rack planejado, estante e painel para TV. Design minimalista com muito espaço de armazenamento.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
-                }
-              },
-              {
-                "@type": "ImageObject",
-                "position": 5,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/home-office.jpg",
-                "name": "Home Office Planejado - São José SC",
-                "description": "Home office planejado com bancada, estantes e armários suspensos. Ambiente funcional e produtivo.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
-                }
-              },
-              {
-                "@type": "ImageObject",
-                "position": 6,
-                "contentUrl": "https://www.movelplanejadosaojose.com.br/images/projects/cozinha-moderna.jpg",
-                "name": "Cozinha Moderna Planejada - São José SC",
-                "description": "Cozinha planejada completa com armários aéreos e inferiores, bancada ampla e acabamento de alto padrão.",
-                "creator": {
-                  "@type": "Organization",
-                  "name": "Móveis Planejados São José"
                 }
               }
             ]

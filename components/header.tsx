@@ -80,11 +80,11 @@ export function Header() {
               </Button>
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t">
                 <a
-                  href="tel:+554830000000"
+                  href="tel:+5548984587067"
                   className="flex items-center gap-2 text-sm hover:text-primary"
                 >
                   <Phone className="h-4 w-4" />
-                  (48) 3000-0000
+                  (48) 98458-7067
                 </a>
                 <a
                   href="mailto:contato@moveisplanejados.com.br"
