@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Mail } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +34,9 @@ export function Header() {
         : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     }`}>
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <h1 className="text-base sm:text-lg md:text-xl font-bold text-primary truncate">
-            <span className="hidden sm:inline">Móveis Planejados São José</span>
-            <span className="sm:hidden">MPSJ</span>
-          </h1>
-        </div>
+        <a href="#inicio" className="flex items-center">
+          <Logo className="w-40 sm:w-48 md:w-56 lg:w-64 text-foreground hover:text-primary transition-colors" />
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">

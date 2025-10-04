@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /_next/
 
 # Sitemap
-Sitemap: https://seusite.com.br/sitemap.xml
+Sitemap: https://www.movelplanejadosaojose.com.br/sitemap.xml
