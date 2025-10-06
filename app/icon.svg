@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#1a1a1a" rx="4"/>
+  <text x="16" y="22" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">MP</text>
+  <rect x="4" y="26" width="24" height="1.5" fill="#8b5cf6" rx="0.75"/>
+</svg>

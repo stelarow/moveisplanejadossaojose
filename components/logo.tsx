@@ -16,23 +16,23 @@ export function Logo({ className = "" }: { className?: string }) {
         </style>
         <text
           x="0"
-          y="35"
+          y="32"
           fontFamily="Montserrat, sans-serif"
-          fontSize="28"
+          fontSize="22"
           fontWeight="300"
           fill="currentColor"
-          letterSpacing="2"
+          letterSpacing="1"
         >
           MÓVEIS PLANEJADOS
         </text>
         <text
           x="0"
-          y="65"
+          y="56"
           fontFamily="Montserrat, sans-serif"
-          fontSize="20"
+          fontSize="16"
           fontWeight="600"
           fill="currentColor"
-          letterSpacing="4"
+          letterSpacing="3"
         >
           SÃO JOSÉ
         </text>
