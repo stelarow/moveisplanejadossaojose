@@ -1,8 +1,0 @@
-# Robots.txt para Móveis Planejados São José
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-
-# Sitemap
-Sitemap: https://www.movelplanejadosaojose.com.br/sitemap.xml
