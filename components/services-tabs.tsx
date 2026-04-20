@@ -138,39 +138,46 @@ export function ServicesTabs() {
     }
   ];
 
+  const featuredService = services[0];
+
   return (
-    <section id="servicos" className="py-20 bg-muted/50">
+    <section
+      id="servicos"
+      className="section-shell bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(246,241,232,0.7)_100%)]"
+    >
       <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Nossos Serviços
+        <div className="mx-auto mb-12 max-w-3xl space-y-4 text-center md:mb-14">
+          <p className="eyebrow">Ambientes planejados</p>
+          <h2 className="display-serif text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-5xl">
+            Soluções sob medida para cada ambiente
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Soluções completas em móveis planejados para todos os ambientes da sua casa ou empresa em São José, SC
+          <p className="text-lg leading-8 text-muted-foreground md:text-xl">
+            Cada categoria funciona como uma vitrine do que projetamos,
+            fabricamos e instalamos em São José e região.
           </p>
         </div>
 
         <Tabs defaultValue="cozinhas" className="w-full services-tabs">
-          <div className="relative mb-8">
-            {/* Botão Esquerda */}
+          <div className="relative mb-8 md:mb-10">
             {canScrollLeft && (
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => scroll('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 size-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 border-0 shadow-lg"
+                aria-label="Rolar categorias para a esquerda"
+                className="absolute left-1 top-1/2 z-10 size-11 -translate-y-1/2 rounded-full border-0 bg-[#1f3a34] text-white shadow-[0_20px_35px_-24px_rgba(0,0,0,0.85)] hover:bg-[#294940]"
               >
                 <ChevronLeft className="h-5 w-5" />
               </Button>
             )}
 
-            {/* Botão Direita */}
             {canScrollRight && (
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => scroll('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 size-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 border-0 shadow-lg"
+                aria-label="Rolar categorias para a direita"
+                className="absolute right-1 top-1/2 z-10 size-11 -translate-y-1/2 rounded-full border-0 bg-[#1f3a34] text-white shadow-[0_20px_35px_-24px_rgba(0,0,0,0.85)] hover:bg-[#294940]"
               >
                 <ChevronRight className="h-5 w-5" />
               </Button>
@@ -179,13 +186,13 @@ export function ServicesTabs() {
             <TabsList
               ref={scrollRef}
               onScroll={checkScroll}
-              className="w-full justify-start overflow-x-auto overflow-y-hidden h-auto p-1 bg-background border rounded-lg flex-nowrap scrollable-tabs"
+              className="scrollable-tabs h-auto w-full justify-start overflow-x-auto overflow-y-hidden rounded-full border border-black/8 bg-[#f3ede3] p-1.5 shadow-sm flex-nowrap"
             >
               {services.map((service) => (
                 <TabsTrigger
                   key={service.id}
                   value={service.id}
-                  className="relative whitespace-nowrap px-6 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:font-semibold transition-all"
+                  className="relative whitespace-nowrap rounded-full px-5 py-3 text-sm font-semibold text-foreground/75 transition-all duration-200 data-[state=active]:bg-[#1f3a34] data-[state=active]:text-white data-[state=active]:shadow-[0_12px_30px_-22px_rgba(0,0,0,0.7)]"
                 >
                   {service.title}
                 </TabsTrigger>
@@ -199,48 +206,87 @@ export function ServicesTabs() {
               value={service.id}
               className="mt-0 animate-in fade-in-50 slide-in-from-bottom-3 duration-300"
             >
-              <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-                {/* Imagem */}
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src={service.image}
-                    alt={`${service.title} - Móveis Planejados São José`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+              <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+                <div className="space-y-4">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#ded4c7] shadow-[0_24px_60px_-34px_rgba(0,0,0,0.32)]">
+                    <Image
+                      src={service.image}
+                      alt={`${service.title} - Móveis Planejados São José`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 52vw"
+                    />
+                  </div>
+
+                  <div className="grid gap-3 rounded-[1.75rem] border border-black/6 bg-white/80 p-4 text-sm text-muted-foreground shadow-[0_18px_40px_-34px_rgba(0,0,0,0.45)] sm:grid-cols-3">
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
+                        Projeto
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">
+                        Layout pensado para sua rotina
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
+                        Execução
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">
+                        Marcenaria sob medida e instalação precisa
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
+                        Diferencial
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">
+                        Materiais premium e acabamento consistente
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Conteúdo */}
-                <div className="space-y-6">
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-2xl md:text-3xl font-bold">
-                        {service.title}
-                      </h3>
+                <div className="space-y-6 rounded-[2rem] bg-[#f6f1e8] p-6 shadow-[0_24px_60px_-42px_rgba(0,0,0,0.5)] ring-1 ring-black/5 md:p-8 lg:p-10">
+                  <div className="space-y-4 border-b border-black/8 pb-6">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="rounded-full border border-primary/15 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+                        {service.id === featuredService.id
+                          ? "Categoria em destaque"
+                          : "Curadoria residencial e corporativa"}
+                      </span>
                       {service.badge && (
-                        <Badge variant="default" className="text-xs">
+                        <Badge className="rounded-full border-0 bg-[#1f3a34] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#1f3a34]">
                           {service.badge}
                         </Badge>
                       )}
                     </div>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+
+                    <div className="space-y-3">
+                      <h3 className="display-serif text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-4xl">
+                        {service.title}
+                      </h3>
+                      <p className="max-w-xl text-base leading-7 text-foreground/80 md:text-lg">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-base leading-7 text-muted-foreground md:text-[15px]">
                     {service.longDescription}
                   </p>
 
-                  {/* Features */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-lg">O que oferecemos:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                          <span className="text-sm text-muted-foreground leading-relaxed">
+                    <h4 className="text-base font-semibold uppercase tracking-[0.12em] text-primary">
+                      O que entregamos
+                    </h4>
+                    <ul className="grid gap-3">
+                      {service.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-3 rounded-2xl bg-white px-4 py-3 ring-1 ring-black/5"
+                        >
+                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                          <span className="text-sm leading-6 text-foreground/85">
                             {feature}
                           </span>
                         </li>
@@ -248,12 +294,16 @@ export function ServicesTabs() {
                     </ul>
                   </div>
 
-                  {/* CTA */}
-                  <Button size="lg" asChild className="w-full md:w-auto">
-                    <a href="#contato">
-                      {service.cta}
-                    </a>
-                  </Button>
+                  <div className="flex flex-col gap-3 border-t border-black/8 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="max-w-sm text-sm leading-6 text-muted-foreground">
+                      Atendimento consultivo, projeto visual e execução completa
+                      para ambientes planejados com mais critério.
+                    </p>
+                    <Button size="lg" asChild className="w-full sm:w-auto">
+                      <a href="#contato">{service.cta}</a>
+                    </Button>
+                  </div>
+
                 </div>
               </div>
             </TabsContent>

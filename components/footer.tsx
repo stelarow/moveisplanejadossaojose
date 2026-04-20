@@ -1,129 +1,114 @@
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 border-t">
-      <div className="container py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Sobre */}
+    <footer className="border-t border-white/10 bg-[#1f3a34] text-white">
+      <div className="container py-14">
+        <div className="grid gap-8 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Móveis Planejados São José</h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
+              Móveis planejados em São José, SC
+            </p>
+            <h3 className="display-serif text-2xl font-semibold md:text-3xl">
+              Móveis Planejados São José
+            </h3>
+            <p className="max-w-sm text-sm leading-7 text-white/72">
               Transformando ambientes em São José, SC há mais de 15 anos.
               Qualidade, design e atendimento personalizado.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
-          {/* Serviços */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Serviços</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">Serviços</h3>
+            <ul className="space-y-2 text-sm text-white/72">
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Cozinhas Planejadas
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Dormitórios
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Closets
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Salas de Estar
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Banheiros
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Ambientes Corporativos
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Links Úteis */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Links Úteis</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">Navegação</h3>
+            <ul className="space-y-2 text-sm text-white/72">
               <li>
-                <a href="#inicio" className="hover:text-primary">
+                <a href="#inicio" className="transition-colors hover:text-white">
                   Início
                 </a>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-primary">
+                <a href="#servicos" className="transition-colors hover:text-white">
                   Serviços
                 </a>
               </li>
               <li>
-                <a href="#projetos" className="hover:text-primary">
+                <a href="#projetos" className="transition-colors hover:text-white">
                   Projetos
                 </a>
               </li>
               <li>
-                <a href="#depoimentos" className="hover:text-primary">
+                <a href="#depoimentos" className="transition-colors hover:text-white">
                   Depoimentos
                 </a>
               </li>
               <li>
-                <a href="#contato" className="hover:text-primary">
+                <a href="#contato" className="transition-colors hover:text-white">
                   Contato
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contato */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Contato</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">Contato</h3>
+            <ul className="space-y-3 text-sm text-white/72">
               <li className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" />
-                <a href="https://wa.me/554884668814" className="hover:text-primary">
+                <a href="https://wa.me/554884668814" className="transition-colors hover:text-white">
                   +55 48 8466-8814
                 </a>
               </li>
-              <li className="text-sm">
+              <li>
                 Atendimento via WhatsApp
               </li>
+              <li>Segunda a Sexta: 8h às 18h</li>
+              <li>Sábado: 8h às 12h</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="flex flex-col gap-2 pt-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} Móveis Planejados São José. Todos os
             direitos reservados.
           </p>
-          <p className="mt-2">
+          <p>
             São José, Santa Catarina - Atendemos todos os bairros da região
           </p>
         </div>

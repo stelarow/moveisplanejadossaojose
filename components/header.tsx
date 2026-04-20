@@ -30,65 +30,67 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
       isScrolled
-        ? "bg-background/98 backdrop-blur-md shadow-md"
-        : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+        ? "border-black/5 bg-[#f6f1e8]/95 shadow-[0_10px_30px_-24px_rgba(0,0,0,0.45)] backdrop-blur-md"
+        : "border-transparent bg-[#f6f1e8]/88 backdrop-blur"
     }`}>
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-[4.5rem] items-center justify-between gap-6">
         <a href="#inicio" className="flex items-center">
-          <Logo className="w-40 sm:w-48 md:w-56 lg:w-64 text-foreground hover:text-primary transition-colors" />
+          <Logo className="w-40 text-foreground transition-colors hover:text-primary sm:w-48 md:w-52 lg:w-56" />
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden items-center gap-7 md:flex">
           {menuItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-semibold tracking-[0.04em] text-foreground/80 transition-colors hover:text-primary"
             >
               {item.label}
             </a>
           ))}
-          <Button asChild className="hover-scale">
-            <a href="#contato">Solicitar Orçamento</a>
+          <Button asChild size="lg">
+            <a href="#contato">Solicitar orçamento</a>
           </Button>
         </nav>
 
-        {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
+            <Button
+              variant="outline"
+              size="icon"
+              className="border-black/10 bg-white/60 text-foreground hover:border-primary/50 hover:bg-white"
+            >
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col gap-4 mt-8">
+          <SheetContent side="right" className="border-l-black/10 bg-[#f6f1e8] px-6">
+            <nav className="mt-10 flex flex-col gap-5">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium transition-colors hover:text-primary"
+                  className="text-lg font-semibold text-foreground/85 transition-colors hover:text-primary"
                 >
                   {item.label}
                 </a>
               ))}
-              <Button asChild className="mt-4">
+              <Button asChild size="lg" className="mt-4 w-full">
                 <a href="#contato" onClick={() => setIsOpen(false)}>
-                  Solicitar Orçamento
+                  Solicitar orçamento
                 </a>
               </Button>
-              <div className="flex flex-col gap-2 mt-4 pt-4 border-t">
+              <div className="mt-5 flex flex-col gap-3 border-t border-black/10 pt-5">
                 <a
                   href="tel:+554884668814"
-                  className="flex items-center gap-2 text-sm hover:text-primary"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground/75 transition-colors hover:text-primary"
                 >
                   <Phone className="h-4 w-4" />
                   +55 48 8466-8814
                 </a>
                 <a
                   href="mailto:contato@moveisplanejados.com.br"
-                  className="flex items-center gap-2 text-sm hover:text-primary"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground/75 transition-colors hover:text-primary"
                 >
                   <Mail className="h-4 w-4" />
                   contato@moveisplanejados.com.br

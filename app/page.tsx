@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { GalleryOption2Split } from "@/components/gallery-option2-split";
 import { ServicesTabs } from "@/components/services-tabs";
 import { Testimonials } from "@/components/testimonials";
 import { ContactProgressive as Contact } from "@/components/contact-progressive";
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <ServicesTabs />
+        <GalleryOption2Split />
         <Testimonials />
         <Contact />
       </main>
@@ -26,13 +28,6 @@ export default function Home() {
             "@type": "FurnitureStore",
             "name": "Móveis Planejados São José",
             "description": "Especialistas em móveis planejados sob medida em São José, SC. Criamos cozinhas, dormitórios, closets e ambientes corporativos com design personalizado, qualidade superior e atendimento diferenciado. Projeto 3D gratuito e mais de 15 anos de experiência.",
-            "image": "https://www.movelplanejadosaojose.com.br/logo.png",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.movelplanejadosaojose.com.br/logo.png",
-              "width": "600",
-              "height": "60"
-            },
             "@id": "https://www.movelplanejadosaojose.com.br",
             "url": "https://www.movelplanejadosaojose.com.br",
             "telephone": "+55 48 8466-8814",
@@ -72,10 +67,6 @@ export default function Home() {
                 "closes": "12:00"
               }
             ],
-            "sameAs": [
-              "https://www.facebook.com/seuperfil",
-              "https://www.instagram.com/seuperfil"
-            ],
             "areaServed": {
               "@type": "City",
               "name": "São José",
@@ -84,223 +75,6 @@ export default function Home() {
                 "name": "Santa Catarina"
               }
             },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "237"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Maria Silva"
-                },
-                "datePublished": "2025-09-15",
-                "reviewBody": "Excelente trabalho! A cozinha planejada ficou perfeita, aproveitaram cada cantinho. A equipe foi super profissional e o acabamento impecável.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Carlos Souza"
-                },
-                "datePublished": "2025-08-22",
-                "reviewBody": "Meu closet ficou incrível! Atendimento personalizado do início ao fim. Cumpriram todos os prazos e o preço foi justo.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Juliana Costa"
-                },
-                "datePublished": "2025-07-10",
-                "reviewBody": "Reformamos todo o apartamento com móveis planejados. Qualidade excelente e design moderno. Recomendo muito!",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Roberto Ferreira"
-                },
-                "datePublished": "2025-06-28",
-                "reviewBody": "Ótima experiência do projeto à instalação. O dormitório planejado transformou nosso quarto. Muito satisfeito!",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Ana Paula Mendes"
-                },
-                "datePublished": "2025-09-08",
-                "reviewBody": "Adorei meu home office planejado! Ficou funcional e bonito. O atendimento foi excelente e a montagem muito rápida.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Pedro Oliveira"
-                },
-                "datePublished": "2025-08-15",
-                "reviewBody": "Móveis de ótima qualidade! A cozinha com ilha ficou linda. Única ressalva foi uma pequena demora na entrega, mas valeu a pena esperar.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "4",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Fernanda Santos"
-                },
-                "datePublished": "2025-07-30",
-                "reviewBody": "Transformaram meu quarto pequeno em algo incrível! O guarda-roupa planejado aproveitou todo o espaço disponível. Equipe muito atenciosa.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Ricardo Alves"
-                },
-                "datePublished": "2025-07-18",
-                "reviewBody": "Excelente custo-benefício! Fiz a sala de estar completa com rack e estante planejados. Projeto bem elaborado e instalação perfeita.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Camila Rodrigues"
-                },
-                "datePublished": "2025-06-20",
-                "reviewBody": "A bancada da cozinha ficou maravilhosa! Materiais de primeira qualidade e acabamento impecável. Super recomendo para quem procura móveis planejados em São José.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Marcos Pereira"
-                },
-                "datePublished": "2025-05-25",
-                "reviewBody": "Fizeram meu closet dos sonhos! Gavetas com soft close, iluminação em LED, tudo muito bem planejado. Atendimento nota 10!",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Beatriz Lima"
-                },
-                "datePublished": "2025-05-12",
-                "reviewBody": "Móveis lindos e funcionais para o quarto das crianças. A equipe foi muito paciente com as mudanças que fizemos no projeto.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Thiago Martins"
-                },
-                "datePublished": "2025-04-28",
-                "reviewBody": "Bom trabalho! O banheiro planejado ficou ótimo. Preço competitivo e bom atendimento. Recomendo!",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "4",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Patricia Gomes"
-                },
-                "datePublished": "2025-04-10",
-                "reviewBody": "Adorei a área gourmet planejada! Ficou perfeita para receber os amigos. Projeto bem pensado e execução excelente.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Lucas Barbosa"
-                },
-                "datePublished": "2025-03-22",
-                "reviewBody": "Empresa séria e comprometida. Fizeram minha biblioteca planejada com acabamento em madeira nobre. Ficou show!",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Renata Azevedo"
-                },
-                "datePublished": "2025-03-05",
-                "reviewBody": "Melhor investimento que fizemos! A cozinha planejada valorizou muito nosso apartamento. Qualidade superior e preço justo.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                }
-              }
-            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Serviços de Móveis Planejados",

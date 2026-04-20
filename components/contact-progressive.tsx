@@ -81,40 +81,49 @@ export function ContactProgressive() {
   }
 
   return (
-    <section id="contato" className="py-20 bg-muted/30">
+    <section id="contato" className="section-shell section-dark overflow-hidden">
       <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Entre em Contato
+        <div className="mx-auto mb-12 max-w-3xl space-y-4 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/65">
+            Orçamento sem compromisso
+          </p>
+          <h2 className="display-serif text-3xl font-semibold text-white md:text-5xl">
+            Vamos desenhar o seu próximo ambiente
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Solicite um orçamento sem compromisso. Nossa equipe está pronta para
-            atender você em São José, SC
+          <p className="text-lg leading-8 text-white/78 md:text-xl">
+            Fale com a equipe, compartilhe sua ideia e receba uma proposta
+            alinhada ao seu espaço, ao seu prazo e ao seu estilo.
           </p>
         </div>
 
-        {/* Botão WhatsApp em destaque */}
-        <div className="max-w-3xl mx-auto mb-12">
-          <Card className="bg-[#25D366] text-white border-0 hover-lift overflow-hidden">
-            <CardContent className="p-4 md:p-5">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mx-auto mb-10 max-w-4xl">
+          <Card className="overflow-hidden rounded-[1.75rem] border-white/10 bg-[#2a6f55] text-white shadow-[0_24px_60px_-30px_rgba(0,0,0,0.4)]">
+            <CardContent className="p-5 md:p-6">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="bg-white/20 p-2 rounded-full flex-shrink-0">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/16">
                     <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="text-base md:text-lg font-bold">Atendimento via WhatsApp</h3>
-                    <p className="text-white/90 text-xs md:text-sm">Resposta rápida e personalizada</p>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
+                      Atendimento rápido
+                    </p>
+                    <h3 className="mt-1 text-xl font-bold md:text-2xl">
+                      Prefere falar direto no WhatsApp?
+                    </h3>
+                    <p className="mt-1 text-sm leading-6 text-white/82 md:text-base">
+                      Envie sua ideia, fotos ou medidas iniciais e receba um atendimento personalizado.
+                    </p>
                   </div>
                 </div>
                 <Button
                   asChild
-                  size="default"
-                  className="bg-white text-[#25D366] hover:bg-white/90 hover-scale shadow-lg whitespace-nowrap"
+                  size="lg"
+                  className="bg-white text-[#2a6f55] shadow-lg hover:bg-white/90 whitespace-nowrap"
                 >
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    Chamar Agora
+                    Chamar no WhatsApp
                   </a>
                 </Button>
               </div>
@@ -122,29 +131,30 @@ export function ContactProgressive() {
           </Card>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Formulário Progressivo */}
-          <Card className="border-2">
-            <CardHeader>
-              <CardTitle className="text-2xl">Solicite seu Orçamento</CardTitle>
-              <CardDescription className="text-base">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <Card className="rounded-[1.75rem] border-white/10 bg-[#f7f2ea] text-foreground shadow-[0_18px_40px_-30px_rgba(0,0,0,0.4)]">
+            <CardHeader className="space-y-3 pb-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                Formulário de contato
+              </p>
+              <CardTitle className="text-2xl md:text-3xl">Solicite seu orçamento</CardTitle>
+              <CardDescription className="text-base leading-7 text-muted-foreground">
                 Preencha os dados abaixo e entraremos em contato em até 24 horas
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  {/* Nome */}
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base">Nome Completo</FormLabel>
+                        <FormLabel className="text-base">Nome completo</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Digite seu nome"
-                            className="h-11 focus:ring-2 focus:ring-primary/20"
+                            className="h-12 border-black/10 bg-white/80 focus-visible:ring-primary/20"
                             {...field}
                           />
                         </FormControl>
@@ -153,7 +163,6 @@ export function ContactProgressive() {
                     )}
                   />
 
-                  {/* Telefone */}
                   <FormField
                     control={form.control}
                     name="phone"
@@ -164,7 +173,7 @@ export function ContactProgressive() {
                           <Input
                             type="tel"
                             placeholder="(48) 99999-9999"
-                            className="h-11 focus:ring-2 focus:ring-primary/20"
+                            className="h-12 border-black/10 bg-white/80 focus-visible:ring-primary/20"
                             {...field}
                           />
                         </FormControl>
@@ -173,7 +182,6 @@ export function ContactProgressive() {
                     )}
                   />
 
-                  {/* Mensagem */}
                   <FormField
                     control={form.control}
                     name="message"
@@ -184,7 +192,7 @@ export function ContactProgressive() {
                           <Textarea
                             placeholder="Descreva o projeto que você tem em mente..."
                             rows={4}
-                            className="focus:ring-2 focus:ring-primary/20 resize-none"
+                            className="resize-none border-black/10 bg-white/80 focus-visible:ring-primary/20"
                             {...field}
                           />
                         </FormControl>
@@ -193,9 +201,8 @@ export function ContactProgressive() {
                     )}
                   />
 
-                  {/* Mensagem de Sucesso */}
                   {submitSuccess && (
-                    <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg flex items-center gap-2">
+                    <div className="flex items-center gap-2 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-green-800">
                       <CheckCircle2 className="h-5 w-5" />
                       <p className="text-sm font-medium">
                         Mensagem enviada com sucesso! Entraremos em contato em breve.
@@ -203,17 +210,15 @@ export function ContactProgressive() {
                     </div>
                   )}
 
-                  {/* Mensagem de Erro */}
                   {submitError && (
-                    <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                    <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
                       <p className="text-sm font-medium">{submitError}</p>
                     </div>
                   )}
 
-                  {/* Botão de Envio */}
                   <Button
                     type="submit"
-                    className="w-full hover-scale"
+                    className="w-full"
                     size="lg"
                     disabled={isSubmitting}
                   >
@@ -231,34 +236,39 @@ export function ContactProgressive() {
             </CardContent>
           </Card>
 
-          {/* Informações de Contato */}
           <div className="space-y-6">
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-2xl">Informações de Contato</CardTitle>
+            <Card className="rounded-[1.75rem] border-white/10 bg-[#f7f2ea] text-foreground shadow-[0_18px_40px_-30px_rgba(0,0,0,0.4)]">
+              <CardHeader className="space-y-3 pb-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                  Informações de contato
+                </p>
+                <CardTitle className="text-2xl md:text-3xl">Atendimento consultivo</CardTitle>
               </CardHeader>
               <CardContent className="space-y-5">
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-3 rounded-[1.25rem] bg-white/70 px-4 py-4 ring-1 ring-black/6">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
                     <MessageCircle className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-semibold">WhatsApp</p>
                     <a
                       href="https://wa.me/554884668814"
-                      className="text-muted-foreground hover:text-primary text-lg font-medium"
+                      className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
                     >
                       +55 48 8466-8814
                     </a>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                      Compartilhe referências, medidas aproximadas e dúvidas iniciais.
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-3 rounded-[1.25rem] bg-white/70 px-4 py-4 ring-1 ring-black/6">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
                     <Clock className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold">Horário de Atendimento</p>
+                    <p className="font-semibold">Horário de atendimento</p>
                     <p className="text-muted-foreground">
                       Segunda a Sexta: 8h às 18h
                       <br />
@@ -269,12 +279,15 @@ export function ContactProgressive() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-primary to-primary/90 text-primary-foreground border-0 hover-lift">
-              <CardContent className="pt-6 pb-6">
-                <h3 className="text-xl md:text-2xl font-bold mb-3">
+            <Card className="overflow-hidden rounded-[1.75rem] border-white/10 bg-white/8 text-white backdrop-blur-sm">
+              <CardContent className="p-6 md:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+                  Cobertura regional
+                </p>
+                <h3 className="mt-3 text-xl font-bold md:text-2xl">
                   Atendemos toda São José e região
                 </h3>
-                <p className="text-primary-foreground/95 text-base leading-relaxed">
+                <p className="mt-3 text-base leading-7 text-white/80">
                   Kobrasol, Campinas, Forquilhinhas, Barreiros, Centro,
                   Areias, Ipiranga e todos os bairros de São José, SC
                 </p>

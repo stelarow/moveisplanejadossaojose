@@ -1,17 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
+import Image from "next/image";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Card } from "@/components/ui/card";
 
 export function GalleryOption2Split() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
@@ -58,145 +52,107 @@ export function GalleryOption2Split() {
 
   const filteredProjects = selectedCategory === "Todos"
     ? projects
-    : projects.filter(project => project.category === selectedCategory);
+    : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <section id="projetos" className="py-20 bg-muted/30">
-      <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Nossos Projetos
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Confira alguns dos nossos trabalhos realizados em São José e região
-          </p>
+    <section id="projetos" className="section-shell section-dark overflow-hidden">
+      <div className="container space-y-8 md:space-y-10">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+              Projetos em destaque
+            </p>
+            <h2 className="display-serif text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
+              Ambientes que mostram como design e marcenaria se encontram
+            </h2>
+            <p className="max-w-xl text-lg leading-8 text-white/78">
+              Explore cozinhas, closets, dormitórios e salas produzidos para clientes de São José e região.
+            </p>
+          </div>
+
+          <Button
+            asChild
+            variant="outline"
+            className="border-white/60 bg-transparent text-white hover:bg-white hover:text-[#1f3a34]"
+          >
+            <a href="#contato">
+              Quero um projeto assim
+              <ArrowUpRight className="size-4" />
+            </a>
+          </Button>
         </div>
 
-        {/* LAYOUT SPLIT: Texto ao Lado + Carousel */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
-
-          {/* Coluna de Texto Instrutivo */}
-          <div className="space-y-6">
-            <div className="inline-block">
-              <Badge variant="outline" className="mb-2">Qualidade Garantida</Badge>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold">
-              Projetos Personalizados para Cada Ambiente
-            </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Cada projeto é único e desenvolvido pensando nas suas necessidades específicas.
-              Combinamos design moderno, funcionalidade e materiais de primeira qualidade.
-            </p>
-
-            <div className="space-y-4">
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                  1
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Projeto 3D Gratuito</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Visualize seu projeto antes mesmo de começar a produção
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                  2
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Materiais Premium</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Trabalhamos com as melhores marcas e acabamentos do mercado
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                  3
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Montagem Profissional</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Equipe especializada garante instalação perfeita e rápida
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Filtros de Categoria */}
-            <div className="pt-4">
-              <p className="text-sm font-medium mb-3">Filtrar por categoria:</p>
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    onClick={() => setSelectedCategory(category)}
-                    size="sm"
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Coluna do Carousel */}
-          <div className="relative">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
+        <div className="flex flex-wrap gap-2">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              size="sm"
+              variant={selectedCategory === category ? "secondary" : "ghost"}
+              onClick={() => setSelectedCategory(category)}
+              className={
+                selectedCategory === category
+                  ? "border border-white/10 bg-white text-[#1f3a34] hover:bg-white/92"
+                  : "border border-white/12 text-white hover:bg-white/10 hover:text-white"
+              }
             >
-              <CarouselContent>
-                {filteredProjects.map((project, index) => (
-                  <CarouselItem key={index}>
-                    <Card className="overflow-hidden border-2 hover:border-primary/30 transition-all">
-                      <div className="relative h-80 md:h-96">
-                        <Image
-                          src={project.image}
-                          alt={`${project.title} - ${project.category} planejado em ${project.location}`}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              {category}
+            </Button>
+          ))}
+        </div>
 
-                        {/* Info Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-                          <Badge variant="secondary" className="mb-2">
-                            {project.category}
-                          </Badge>
-                          <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                          <p className="text-sm text-white/80 flex items-center gap-1">
-                            <span>📍</span>
-                            {project.location}
-                          </p>
-                        </div>
-                      </div>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
+        <div className="grid gap-4 md:gap-5 lg:grid-cols-3">
+          {filteredProjects.map((project, index) => {
+            const isFeatured = index === 0;
 
-            {/* Progress Indicators */}
-            <div className="flex justify-center gap-2 mt-4">
-              {filteredProjects.map((_, index) => (
-                <div
-                  key={index}
-                  className="w-2 h-2 rounded-full bg-muted-foreground/30"
-                />
-              ))}
+            return (
+              <Card
+                key={project.title}
+                className={
+                  isFeatured
+                    ? "group overflow-hidden rounded-[2rem] border-white/10 bg-white/6 text-white backdrop-blur-sm lg:col-span-2 lg:row-span-2"
+                    : "group overflow-hidden rounded-[1.75rem] border-white/10 bg-white/6 text-white backdrop-blur-sm"
+                }
+              >
+                <div className={isFeatured ? "relative h-[24rem] md:h-[32rem]" : "relative h-80"}>
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} - ${project.category} em ${project.location}`}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    sizes={isFeatured ? "(max-width: 1024px) 100vw, 66vw" : "(max-width: 1024px) 100vw, 33vw"}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 space-y-3 p-5 md:p-7">
+                    <Badge className="w-fit border border-white/10 bg-white/16 text-white hover:bg-white/16">
+                      {project.category}
+                    </Badge>
+                    <div className="space-y-2">
+                      <h3 className={isFeatured ? "display-serif text-2xl font-semibold md:text-3xl" : "text-xl font-semibold"}>
+                        {project.title}
+                      </h3>
+                      <p className="flex items-center gap-2 text-sm text-white/78">
+                        <MapPin className="size-4" />
+                        {project.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="grid gap-4 border-t border-white/12 pt-8 md:grid-cols-3">
+          {[
+            ["01", "Projeto 3D para validar layout e circulação."],
+            ["02", "Materiais e ferragens selecionados para uso real."],
+            ["03", "Montagem profissional com acabamento final no ambiente."],
+          ].map(([step, copy]) => (
+            <div key={step} className="rounded-3xl bg-white/7 p-5">
+              <p className="text-sm font-semibold tracking-[0.16em] text-white/55">{step}</p>
+              <p className="mt-3 text-base leading-7 text-white/88">{copy}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

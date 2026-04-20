@@ -9,30 +9,25 @@ export function Logo({ className = "" }: { className?: string }) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto"
       >
-        <style>
-          {`
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
-          `}
-        </style>
         <text
           x="0"
           y="32"
-          fontFamily="Montserrat, sans-serif"
+          fontFamily="var(--font-sans-ui), sans-serif"
           fontSize="22"
-          fontWeight="300"
+          fontWeight="400"
           fill="currentColor"
-          letterSpacing="1"
+          letterSpacing="0.08em"
         >
           MÓVEIS PLANEJADOS
         </text>
         <text
           x="0"
           y="56"
-          fontFamily="Montserrat, sans-serif"
+          fontFamily="var(--font-sans-ui), sans-serif"
           fontSize="16"
           fontWeight="600"
           fill="currentColor"
-          letterSpacing="3"
+          letterSpacing="0.22em"
         >
           SÃO JOSÉ
         </text>

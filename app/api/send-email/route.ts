@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 export async function POST(request: Request) {
   try {
@@ -15,10 +22,25 @@ export async function POST(request: Request) {
       );
     }
 
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: 'Serviço de e-mail não configurado no momento.' },
+        { status: 503 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
+
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone);
+    const safeMessage = escapeHtml(message);
+
     const data = await resend.emails.send({
       from: 'Móveis Planejados São José <onboarding@resend.dev>',
       to: ['alessandrobatisp@gmail.com'],
-      subject: `Novo Orçamento - ${name}`,
+      subject: `Novo Orçamento - ${safeName}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -43,15 +65,15 @@ export async function POST(request: Request) {
               <div class="content">
                 <div class="field">
                   <div class="field-label">👤 Nome:</div>
-                  <div class="field-value">${name}</div>
+                  <div class="field-value">${safeName}</div>
                 </div>
                 <div class="field">
                   <div class="field-label">📱 Telefone:</div>
-                  <div class="field-value">${phone}</div>
+                  <div class="field-value">${safePhone}</div>
                 </div>
                 <div class="field">
                   <div class="field-label">💬 Mensagem:</div>
-                  <div class="field-value">${message}</div>
+                  <div class="field-value">${safeMessage}</div>
                 </div>
                 <div class="footer">
                   <p>Enviado via formulário do site em ${new Date().toLocaleString('pt-BR')}</p>

@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Lora, Nunito_Sans } from "next/font/google";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const nunitoSans = Nunito_Sans({
+  variable: "--font-sans-ui",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-serif-display",
   subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
-  weight: ["300", "400", "600"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -56,9 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
-      >
+      <body className={`${nunitoSans.variable} ${lora.variable} antialiased`}>
         {children}
         <WhatsAppButton />
       </body>
