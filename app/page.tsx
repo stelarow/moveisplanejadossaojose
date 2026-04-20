@@ -35,7 +35,7 @@ export default function Home() {
             },
             "@id": "https://www.movelplanejadosaojose.com.br",
             "url": "https://www.movelplanejadosaojose.com.br",
-            "telephone": "+55-48-98458-7067",
+            "telephone": "+55 48 8466-8814",
             "priceRange": "$$",
             "currenciesAccepted": "BRL",
             "paymentAccepted": "Dinheiro, Cartão de Crédito, Cartão de Débito, PIX, Transferência Bancária, Parcelamento",

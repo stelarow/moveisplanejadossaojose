@@ -107,8 +107,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" />
-                <a href="https://wa.me/5548984587067" className="hover:text-primary">
-                  (48) 98458-7067
+                <a href="https://wa.me/554884668814" className="hover:text-primary">
+                  +55 48 8466-8814
                 </a>
               </li>
               <li className="text-sm">

@@ -7,7 +7,7 @@ export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Número de WhatsApp
-  const phoneNumber = "5548984587067";
+  const phoneNumber = "554884668814";
   const message = "Olá! Gostaria de solicitar um orçamento de móveis planejados.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

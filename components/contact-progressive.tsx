@@ -37,7 +37,7 @@ export function ContactProgressive() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const whatsappUrl = "https://wa.me/5548984587067?text=" + encodeURIComponent("Olá! Gostaria de solicitar um orçamento de móveis planejados.");
+  const whatsappUrl = "https://wa.me/554884668814?text=" + encodeURIComponent("Olá! Gostaria de solicitar um orçamento de móveis planejados.");
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -245,10 +245,10 @@ export function ContactProgressive() {
                   <div>
                     <p className="font-semibold">WhatsApp</p>
                     <a
-                      href="https://wa.me/5548984587067"
+                      href="https://wa.me/554884668814"
                       className="text-muted-foreground hover:text-primary text-lg font-medium"
                     >
-                      (48) 98458-7067
+                      +55 48 8466-8814
                     </a>
                   </div>
                 </div>

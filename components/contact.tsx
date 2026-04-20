@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 
 export function Contact() {
-  const whatsappUrl = "https://wa.me/5548999999999?text=" + encodeURIComponent("Olá! Gostaria de solicitar um orçamento de móveis planejados.");
+  const whatsappUrl = "https://wa.me/554884668814?text=" + encodeURIComponent("Olá! Gostaria de solicitar um orçamento de móveis planejados.");
 
   return (
     <section id="contato" className="py-20 bg-muted/30">
@@ -132,17 +132,10 @@ export function Contact() {
                   <div>
                     <p className="font-semibold">Telefone/WhatsApp</p>
                     <a
-                      href="tel:+554830000000"
+                      href="tel:+554884668814"
                       className="text-muted-foreground hover:text-primary"
                     >
-                      (48) 3000-0000
-                    </a>
-                    <br />
-                    <a
-                      href="https://wa.me/5548999999999"
-                      className="text-muted-foreground hover:text-primary"
-                    >
-                      (48) 99999-9999
+                      +55 48 8466-8814
                     </a>
                   </div>
                 </div>
