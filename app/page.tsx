@@ -43,10 +43,8 @@ export default function Home() {
             "paymentAccepted": "Dinheiro, Cartão de Crédito, Cartão de Débito, PIX, Transferência Bancária, Parcelamento",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Rua Caetano José Ferreira, 426",
               "addressLocality": "São José",
               "addressRegion": "SC",
-              "postalCode": "88103-000",
               "addressCountry": "BR"
             },
             "geo": {

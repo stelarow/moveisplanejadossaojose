@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle, MapPin, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,13 +17,6 @@ export function Footer() {
               Transformando ambientes em São José, SC há mais de 15 anos.
               Qualidade, design e atendimento personalizado.
             </p>
-            <address className="flex items-start gap-2 not-italic text-sm leading-6 text-white/72">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
-              <span>
-                Rua Caetano José Ferreira, 426<br />
-                Kobrasol, São José - SC, 88103-000
-              </span>
-            </address>
           </div>
 
           <div className="space-y-4">
@@ -117,13 +110,6 @@ export function Footer() {
                 <a href="mailto:contato@movelplanejadosaojose.com.br" className="transition-colors hover:text-white">
                   contato@movelplanejadosaojose.com.br
                 </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  Rua Caetano José Ferreira, 426<br />
-                  Kobrasol, São José - SC
-                </span>
               </li>
               <li>Segunda a Sexta: 8h às 18h</li>
               <li>Sábado: 8h às 12h</li>
