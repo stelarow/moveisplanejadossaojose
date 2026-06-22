@@ -90,6 +90,27 @@ export function About() {
             entregamos em São José e região.
           </p>
         </div>
+
+        <div className="mx-auto mt-5 max-w-3xl rounded-[1.5rem] border border-primary/15 bg-white px-6 py-6 text-center shadow-[0_18px_40px_-34px_rgba(0,0,0,0.25)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+            Parceiro de capacitação
+          </p>
+          <p className="mt-3 text-sm leading-7 text-foreground/85">
+            Todos os nossos projetos são desenvolvidos em software 3D e render
+            realista antes da fabricação. Quem quer aprender a projetar móveis,
+            ambientes e interiores do zero pode fazer os{" "}
+            <a
+              href="https://www.escolahabilidade.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+            >
+              cursos profissionalizantes em São José da Escola Habilidade
+            </a>
+            , nossa escola parceira no mesmo endereço — com turmas de SketchUp,
+            AutoCAD, projetista 3D e design de interiores.
+          </p>
+        </div>
       </div>
     </section>
   );

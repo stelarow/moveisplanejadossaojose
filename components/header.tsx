@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Mail } from "lucide-react";
@@ -9,6 +11,10 @@ import { Logo } from "@/components/logo";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +26,11 @@ export function Header() {
   }, []);
 
   const menuItems = [
-    { label: "Início", href: "#inicio" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Projetos", href: "#projetos" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Início", href: "/" },
+    { label: "Serviços", href: sectionHref("#servicos") },
+    { label: "Projetos", href: sectionHref("#projetos") },
+    { label: "Depoimentos", href: sectionHref("#depoimentos") },
+    { label: "Contato", href: sectionHref("#contato") },
   ];
 
   return (
@@ -34,22 +40,22 @@ export function Header() {
         : "border-transparent bg-[#f6f1e8]/88 backdrop-blur"
     }`}>
       <div className="container flex h-[4.5rem] items-center justify-between gap-6">
-        <a href="#inicio" className="flex items-center">
+        <Link href="/" className="flex items-center" aria-label="Voltar para a página inicial">
           <Logo className="w-40 text-foreground transition-colors hover:text-primary sm:w-48 md:w-52 lg:w-56" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
           {menuItems.map((item) => (
-            <a
-              key={item.href}
+            <Link
+              key={item.label}
               href={item.href}
               className="text-sm font-semibold tracking-[0.04em] text-foreground/80 transition-colors hover:text-primary"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button asChild size="lg">
-            <a href="#contato">Solicitar orçamento</a>
+            <Link href={sectionHref("#contato")}>Solicitar orçamento</Link>
           </Button>
         </nav>
 
@@ -66,19 +72,19 @@ export function Header() {
           <SheetContent side="right" className="border-l-black/10 bg-[#f6f1e8] px-6">
             <nav className="mt-10 flex flex-col gap-5">
               {menuItems.map((item) => (
-                <a
-                  key={item.href}
+                <Link
+                  key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className="text-lg font-semibold text-foreground/85 transition-colors hover:text-primary"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <Button asChild size="lg" className="mt-4 w-full">
-                <a href="#contato" onClick={() => setIsOpen(false)}>
+                <Link href={sectionHref("#contato")} onClick={() => setIsOpen(false)}>
                   Solicitar orçamento
-                </a>
+                </Link>
               </Button>
               <div className="mt-5 flex flex-col gap-3 border-t border-black/10 pt-5">
                 <a
