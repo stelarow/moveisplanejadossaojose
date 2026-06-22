@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Award, Hammer, ShieldCheck, Clock3 } from "lucide-react";
 
 export function About() {
@@ -91,25 +92,44 @@ export function About() {
           </p>
         </div>
 
-        <div className="mx-auto mt-5 max-w-3xl rounded-[1.5rem] border border-primary/15 bg-white px-6 py-6 text-center shadow-[0_18px_40px_-34px_rgba(0,0,0,0.25)]">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-            Parceiro de capacitação
-          </p>
-          <p className="mt-3 text-sm leading-7 text-foreground/85">
-            Todos os nossos projetos são desenvolvidos em software 3D e render
-            realista antes da fabricação. Quem quer aprender a projetar móveis,
-            ambientes e interiores do zero pode fazer os{" "}
+        <div className="mx-auto mt-5 max-w-3xl rounded-[1.5rem] border border-primary/15 bg-white px-6 py-6 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.25)]">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-start sm:gap-6">
             <a
               href="https://www.escolahabilidade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+              className="shrink-0 transition-opacity hover:opacity-80"
+              aria-label="Escola Habilidade — cursos profissionalizantes em São José"
             >
-              cursos profissionalizantes em São José da Escola Habilidade
+              <Image
+                src="/images/logo-escola-habilidade.png"
+                alt="Logo da Escola Habilidade — escola de cursos profissionalizantes em São José, SC"
+                width={72}
+                height={72}
+                className="h-16 w-16 rounded-xl object-contain sm:h-20 sm:w-20"
+              />
             </a>
-            , nossa escola parceira no mesmo endereço — com turmas de SketchUp,
-            AutoCAD, projetista 3D e design de interiores.
-          </p>
+            <div className="text-center sm:text-left">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                Parceiro de capacitação
+              </p>
+              <p className="mt-3 text-sm leading-7 text-foreground/85">
+                Todos os nossos projetos são desenvolvidos em software 3D e render
+                realista antes da fabricação. Quem quer aprender a projetar móveis,
+                ambientes e interiores do zero pode fazer os{" "}
+                <a
+                  href="https://www.escolahabilidade.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+                >
+                  cursos profissionalizantes em São José da Escola Habilidade
+                </a>
+                , nossa escola parceira no mesmo endereço — com turmas de SketchUp,
+                AutoCAD, projetista 3D e design de interiores.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
