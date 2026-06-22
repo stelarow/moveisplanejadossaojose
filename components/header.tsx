@@ -89,11 +89,11 @@ export function Header() {
                   +55 48 8466-8814
                 </a>
                 <a
-                  href="mailto:contato@moveisplanejados.com.br"
+                  href="mailto:contato@movelplanejadosaojose.com.br"
                   className="flex items-center gap-2 text-sm font-medium text-foreground/75 transition-colors hover:text-primary"
                 >
                   <Mail className="h-4 w-4" />
-                  contato@moveisplanejados.com.br
+                  contato@movelplanejadosaojose.com.br
                 </a>
               </div>
             </nav>

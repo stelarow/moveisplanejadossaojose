@@ -1,4 +1,5 @@
-import { MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { MessageCircle, MapPin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -16,40 +17,47 @@ export function Footer() {
               Transformando ambientes em São José, SC há mais de 15 anos.
               Qualidade, design e atendimento personalizado.
             </p>
+            <address className="flex items-start gap-2 not-italic text-sm leading-6 text-white/72">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/55" />
+              <span>
+                Rua Caetano José Ferreira, 426<br />
+                Kobrasol, São José - SC, 88103-000
+              </span>
+            </address>
           </div>
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">Serviços</h3>
             <ul className="space-y-2 text-sm text-white/72">
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/cozinhas-planejadas-sao-jose" className="transition-colors hover:text-white">
                   Cozinhas Planejadas
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/dormitorios-planejados-sao-jose" className="transition-colors hover:text-white">
                   Dormitórios
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/closets-sao-jose" className="transition-colors hover:text-white">
                   Closets
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/#servicos" className="transition-colors hover:text-white">
                   Salas de Estar
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/#servicos" className="transition-colors hover:text-white">
                   Banheiros
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/#servicos" className="transition-colors hover:text-white">
                   Ambientes Corporativos
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -58,29 +66,39 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/60">Navegação</h3>
             <ul className="space-y-2 text-sm text-white/72">
               <li>
-                <a href="#inicio" className="transition-colors hover:text-white">
+                <Link href="/#inicio" className="transition-colors hover:text-white">
                   Início
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicos" className="transition-colors hover:text-white">
+                <Link href="/#servicos" className="transition-colors hover:text-white">
                   Serviços
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#projetos" className="transition-colors hover:text-white">
+                <Link href="/#projetos" className="transition-colors hover:text-white">
                   Projetos
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#depoimentos" className="transition-colors hover:text-white">
+                <Link href="/#sobre" className="transition-colors hover:text-white">
+                  Sobre
+                </Link>
+              </li>
+              <li>
+                <Link href="/#areas-atendidas" className="transition-colors hover:text-white">
+                  Áreas Atendidas
+                </Link>
+              </li>
+              <li>
+                <Link href="/#depoimentos" className="transition-colors hover:text-white">
                   Depoimentos
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contato" className="transition-colors hover:text-white">
+                <Link href="/#contato" className="transition-colors hover:text-white">
                   Contato
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -94,8 +112,18 @@ export function Footer() {
                   +55 48 8466-8814
                 </a>
               </li>
-              <li>
-                Atendimento via WhatsApp
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                <a href="mailto:contato@movelplanejadosaojose.com.br" className="transition-colors hover:text-white">
+                  contato@movelplanejadosaojose.com.br
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  Rua Caetano José Ferreira, 426<br />
+                  Kobrasol, São José - SC
+                </span>
               </li>
               <li>Segunda a Sexta: 8h às 18h</li>
               <li>Sábado: 8h às 12h</li>

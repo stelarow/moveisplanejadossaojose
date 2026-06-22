@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Clock, MessageCircle, Loader2, CheckCircle2 } from "lucide-react";
+import { Clock, MessageCircle, Loader2, CheckCircle2, MapPin } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -274,6 +274,27 @@ export function ContactProgressive() {
                       <br />
                       Sábado: 8h às 12h
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-[1.25rem] bg-white/70 px-4 py-4 ring-1 ring-black/6">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Showroom em São José, SC</p>
+                    <address className="not-italic text-muted-foreground">
+                      Rua Caetano José Ferreira, 426<br />
+                      Kobrasol, São José - SC, 88103-000
+                    </address>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Rua+Caetano+Jos%C3%A9+Ferreira+426+S%C3%A3o+Jos%C3%A9+SC"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-block text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    >
+                      Ver no Google Maps →
+                    </a>
                   </div>
                 </div>
               </CardContent>

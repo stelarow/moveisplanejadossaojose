@@ -1,38 +1,21 @@
 import { MetadataRoute } from 'next'
+import { servicePages } from '@/lib/services'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.movelplanejadosaojose.com.br'
 
   return [
     {
-      url: baseUrl,
+      url: baseUrl + '/',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
-    {
-      url: `${baseUrl}/#servicos`,
+    ...servicePages.map((s) => ({
+      url: `${baseUrl}/${s.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#projetos`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#depoimentos`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/#contato`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
-    },
+    })),
   ]
 }

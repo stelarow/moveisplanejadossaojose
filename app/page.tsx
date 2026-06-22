@@ -2,6 +2,8 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { GalleryOption2Split } from "@/components/gallery-option2-split";
 import { ServicesTabs } from "@/components/services-tabs";
+import { About } from "@/components/about";
+import { ServiceAreas } from "@/components/service-areas";
 import { Testimonials } from "@/components/testimonials";
 import { ContactProgressive as Contact } from "@/components/contact-progressive";
 import { Footer } from "@/components/footer";
@@ -14,6 +16,8 @@ export default function Home() {
         <Hero />
         <ServicesTabs />
         <GalleryOption2Split />
+        <About />
+        <ServiceAreas />
         <Testimonials />
         <Contact />
       </main>
@@ -31,6 +35,9 @@ export default function Home() {
             "@id": "https://www.movelplanejadosaojose.com.br",
             "url": "https://www.movelplanejadosaojose.com.br",
             "telephone": "+55 48 8466-8814",
+            "email": "contato@movelplanejadosaojose.com.br",
+            "image": "https://www.movelplanejadosaojose.com.br/images/hero-kitchen.jpg",
+            "logo": "https://www.movelplanejadosaojose.com.br/icon.svg",
             "priceRange": "$$",
             "currenciesAccepted": "BRL",
             "paymentAccepted": "Dinheiro, Cartão de Crédito, Cartão de Débito, PIX, Transferência Bancária, Parcelamento",
@@ -67,41 +74,135 @@ export default function Home() {
                 "closes": "12:00"
               }
             ],
-            "areaServed": {
-              "@type": "City",
-              "name": "São José",
-              "containedIn": {
-                "@type": "State",
-                "name": "Santa Catarina"
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "São José"
+              },
+              {
+                "@type": "City",
+                "name": "Florianópolis"
+              },
+              {
+                "@type": "City",
+                "name": "Palhoça"
+              },
+              {
+                "@type": "City",
+                "name": "Biguaçu"
+              },
+              {
+                "@type": "City",
+                "name": "Santo Amaro da Imperatriz"
               }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
             },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Maria Silva"
+                },
+                "datePublished": "2025-10-15",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Excelente trabalho! A cozinha ficou perfeita, exatamente como imaginei. A equipe é muito profissional e o acabamento é impecável."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "João Santos"
+                },
+                "datePublished": "2025-11-02",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Contratei para fazer o closet do meu apartamento e superou minhas expectativas. Projeto 3D muito detalhado e instalação rápida."
+              }
+            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Serviços de Móveis Planejados",
+              "name": "Serviços de Móveis Planejados em São José",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Cozinhas Planejadas"
+                    "name": "Cozinhas Planejadas em São José",
+                    "url": "https://www.movelplanejadosaojose.com.br/cozinhas-planejadas-sao-jose"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Dormitórios Planejados"
+                    "name": "Dormitórios Planejados",
+                    "url": "https://www.movelplanejadosaojose.com.br/dormitorios-planejados-sao-jose"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Closets sob Medida"
+                    "name": "Closets sob Medida",
+                    "url": "https://www.movelplanejadosaojose.com.br/closets-sao-jose"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Salas de Estar Planejadas"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Banheiros Planejados"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Ambientes Corporativos"
                   }
                 }
               ]
             }
+          })
+        }}
+      />
+
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://www.movelplanejadosaojose.com.br/"
+              }
+            ]
           })
         }}
       />

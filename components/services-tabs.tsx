@@ -39,6 +39,7 @@ export function ServicesTabs() {
       title: "Cozinhas Planejadas",
       badge: "Mais Procurado",
       image: "/images/projects/cozinha-planejada.jpg",
+      detailHref: "/cozinhas-planejadas-sao-jose",
       description: "Transforme sua cozinha em um ambiente funcional, moderno e acolhedor. Nossos projetos de cozinhas planejadas são desenvolvidos sob medida para otimizar cada centímetro do espaço disponível, combinando design elegante com soluções práticas para o seu dia a dia.",
       longDescription: "Cada detalhe é pensado para facilitar sua rotina: desde a disposição estratégica de armários e gavetas até a escolha de materiais resistentes e de fácil limpeza. Oferecemos acabamentos premium em diversos estilos - do clássico ao contemporâneo - sempre respeitando sua identidade e necessidades.",
       features: [
@@ -56,6 +57,7 @@ export function ServicesTabs() {
       title: "Dormitórios Completos",
       badge: "Popular",
       image: "/images/projects/dormitorio.jpg",
+      detailHref: "/dormitorios-planejados-sao-jose",
       description: "Crie o quarto dos seus sonhos com móveis planejados que unem conforto, organização e estilo. Desenvolvemos projetos completos de dormitórios com guarda-roupas, camas, criados-mudos, bancadas e todos os elementos necessários para um ambiente harmonioso.",
       longDescription: "Nossos dormitórios planejados são projetados pensando no seu bem-estar e rotina. Cada espaço é aproveitado de forma inteligente, criando áreas funcionais para descanso, arrumação e lazer. Trabalhamos com diversos estilos decorativos e oferecemos soluções personalizadas para quartos de casal, infantis e teen.",
       features: [
@@ -73,6 +75,7 @@ export function ServicesTabs() {
       title: "Closets Sob Medida",
       badge: null,
       image: "/images/projects/closet-luxo.jpg",
+      detailHref: "/closets-sao-jose",
       description: "Tenha o closet perfeito para organizar roupas, sapatos, bolsas e acessórios com sofisticação e praticidade. Nossos closets planejados oferecem soluções inteligentes de armazenamento que facilitam sua rotina e valorizam seu espaço.",
       longDescription: "Cada closet é único e projetado de acordo com seu estilo de vida e necessidades específicas. Criamos sistemas de organização com araras, prateleiras ajustáveis, gaveteiros, sapateiras e compartimentos especiais. Iluminação estratégica e espelhos integrados completam o projeto para uma experiência premium.",
       features: [
@@ -90,6 +93,7 @@ export function ServicesTabs() {
       title: "Salas de Estar",
       badge: null,
       image: "/images/projects/sala-estar.jpg",
+      detailHref: null,
       description: "Transforme sua sala em um espaço elegante e funcional com móveis planejados que combinam design e praticidade. Oferecemos estantes, painéis para TV, aparadores e móveis multifuncionais que organizam e decoram seu ambiente.",
       longDescription: "Nossas salas planejadas são pensadas para criar ambientes acolhedores onde você pode relaxar, receber amigos e família com conforto. Criamos soluções que integram tecnologia, organização e estética, com nichos para decoração, compartimentos para equipamentos eletrônicos e acabamentos que valorizam seu espaço.",
       features: [
@@ -107,6 +111,7 @@ export function ServicesTabs() {
       title: "Banheiros Planejados",
       badge: null,
       image: "/images/projects/banheiro-moderno.jpg",
+      detailHref: null,
       description: "Aproveite cada espaço do seu banheiro com móveis planejados funcionais e elegantes. Desenvolvemos armários, gabinetes, nichos e prateleiras que organizam produtos de higiene e decoração com estilo.",
       longDescription: "Banheiros planejados precisam de materiais resistentes à umidade e soluções inteligentes de armazenamento. Nossos projetos utilizam ferragens especiais, acabamentos impermeáveis e design otimizado para criar ambientes práticos, higiênicos e bonitos. Do lavabo ao banheiro master, criamos soluções sob medida.",
       features: [
@@ -124,6 +129,7 @@ export function ServicesTabs() {
       title: "Ambientes Corporativos",
       badge: null,
       image: "/images/projects/escritorio-corporativo.jpg",
+      detailHref: null,
       description: "Mobilie seu escritório, consultório ou estabelecimento comercial com soluções planejadas que transmitem profissionalismo e organização. Criamos ambientes corporativos funcionais que aumentam a produtividade e impressionam clientes.",
       longDescription: "Ambientes corporativos exigem móveis robustos, funcionais e que transmitam a identidade da sua marca. Desenvolvemos projetos completos para escritórios, consultórios médicos, clínicas, salões de beleza e lojas comerciais. Cada projeto é pensado para otimizar fluxo de trabalho, organização de documentos e atendimento ao cliente.",
       features: [
@@ -295,10 +301,20 @@ export function ServicesTabs() {
                   </div>
 
                   <div className="flex flex-col gap-3 border-t border-black/8 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="max-w-sm text-sm leading-6 text-muted-foreground">
-                      Atendimento consultivo, projeto visual e execução completa
-                      para ambientes planejados com mais critério.
-                    </p>
+                    <div className="flex flex-col gap-2 sm:max-w-sm">
+                      <p className="text-sm leading-6 text-muted-foreground">
+                        Atendimento consultivo, projeto visual e execução completa
+                        para ambientes planejados com mais critério.
+                      </p>
+                      {service.detailHref && (
+                        <a
+                          href={service.detailHref}
+                          className="text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                        >
+                          Ver página de {service.title.toLowerCase()} →
+                        </a>
+                      )}
+                    </div>
                     <Button size="lg" asChild className="w-full sm:w-auto">
                       <a href="#contato">{service.cta}</a>
                     </Button>

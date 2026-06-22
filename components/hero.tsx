@@ -24,13 +24,13 @@ export function Hero() {
             <div className="space-y-6">
               <p className="eyebrow">Móveis planejados em São José, SC</p>
               <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                Ambientes sob medida com acabamento de showroom e atendimento
+                Móveis Planejados em São José SC sob medida com acabamento{" "}
                 <span className="display-serif ml-2 text-primary">premium</span>
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
                 Projetamos cozinhas, dormitórios, closets e espaços
                 corporativos com aproveitamento inteligente, estética refinada
-                e instalação profissional.
+                e instalação profissional em São José e Grande Florianópolis.
               </p>
             </div>
 

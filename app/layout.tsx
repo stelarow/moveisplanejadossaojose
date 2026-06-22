@@ -17,10 +17,13 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.movelplanejadosaojose.com.br'),
-  title: "Móveis Planejados em São José SC | Qualidade e Design Personalizado",
-  description: "Móveis planejados sob medida em São José, Santa Catarina. Cozinhas, dormitórios, closets e ambientes corporativos. Atendimento personalizado, qualidade garantida e os melhores preços da região.",
+  title: "Móveis Planejados em São José SC | Sob Medida com Garantia",
+  description: "Móveis planejados sob medida em São José/SC. Cozinhas, closets, dormitórios e ambientes corporativos com projeto 3D gratuito. Peça seu orçamento.",
   keywords: "móveis planejados são josé sc, móveis sob medida são josé, cozinha planejada são josé, armários planejados sc, móveis personalizados santa catarina",
   authors: [{ name: "Móveis Planejados São José" }],
+  alternates: {
+    canonical: "https://www.movelplanejadosaojose.com.br/",
+  },
   openGraph: {
     title: "Móveis Planejados em São José SC",
     description: "Móveis planejados sob medida em São José, SC. Qualidade, design e atendimento personalizado.",
@@ -28,6 +31,20 @@ export const metadata: Metadata = {
     siteName: "Móveis Planejados São José",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/images/hero-kitchen.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cozinha planejada premium em São José SC - Móveis Planejados São José",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Móveis Planejados em São José SC",
+    description: "Móveis planejados sob medida em São José, SC. Projeto 3D gratuito.",
+    images: ["/images/hero-kitchen.jpg"],
   },
   robots: {
     index: true,
